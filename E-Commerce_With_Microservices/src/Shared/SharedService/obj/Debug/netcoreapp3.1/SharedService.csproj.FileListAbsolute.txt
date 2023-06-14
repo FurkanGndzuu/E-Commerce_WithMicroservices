@@ -1,0 +1,10 @@
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Shared\SharedService\bin\Debug\netcoreapp3.1\SharedService.deps.json
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Shared\SharedService\bin\Debug\netcoreapp3.1\SharedService.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Shared\SharedService\bin\Debug\netcoreapp3.1\SharedService.pdb
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Shared\SharedService\obj\Debug\netcoreapp3.1\SharedService.csproj.AssemblyReference.cache
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Shared\SharedService\obj\Debug\netcoreapp3.1\SharedService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Shared\SharedService\obj\Debug\netcoreapp3.1\SharedService.AssemblyInfoInputs.cache
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Shared\SharedService\obj\Debug\netcoreapp3.1\SharedService.AssemblyInfo.cs
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Shared\SharedService\obj\Debug\netcoreapp3.1\SharedService.csproj.CoreCompileInputs.cache
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Shared\SharedService\obj\Debug\netcoreapp3.1\SharedService.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Shared\SharedService\obj\Debug\netcoreapp3.1\SharedService.pdb
