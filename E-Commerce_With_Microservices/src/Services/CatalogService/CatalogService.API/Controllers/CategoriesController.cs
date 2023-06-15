@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CatalogService.API.Abstractions;
+using CatalogService.API.DTOs;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatalogService.API.Controllers
@@ -7,5 +9,23 @@ namespace CatalogService.API.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
+        readonly ICategoryService _categoryService;
+
+        public CategoriesController(ICategoryService categoryService)
+        {
+            _categoryService = categoryService;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllCategories() => Ok(await _categoryService.GetAllCategories());
+        [HttpGet("{Id}")]
+        public async Task<IActionResult> GetCategoryById(string Id) => Ok(await _categoryService.GetCategoryById(Id));
+        [HttpPost]
+        public async Task<IActionResult> CreateCategory([FromQuery] string Name) => Ok(await _categoryService.AddCategory(Name));
+        [HttpPut]
+        public async Task<IActionResult> UpdateCategory([FromBody] CategoryDTO category) => Ok(await _categoryService.UpdateCategory(category));
+        [HttpDelete("{Id}")]
+        public async Task<IActionResult> DeleteCategory(string Id) => Ok(await _categoryService.RemoveCategoryById(Id));
+
     }
 }

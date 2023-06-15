@@ -41,7 +41,12 @@ namespace CatalogService.API.Services
         {
             Category? category = await _categoryReadRepository.GetSingleAsync(x => x.Id.ToString().Equals(Id));
             if (category is not null)
+            {
+                _categoryWriteRepository.Remove(category);
+                await _categoryWriteRepository.SaveAsync();
                 return Response<NoContent>.Success(StatusCode: StatusCodes.Status200OK);
+            }
+                
             return Response<NoContent>.Fail("Product is not Removed", StatusCodes.Status500InternalServerError);
         }
 

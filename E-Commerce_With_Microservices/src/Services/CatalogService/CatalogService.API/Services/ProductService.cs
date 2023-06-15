@@ -29,7 +29,14 @@ namespace CatalogService.API.Services
             if(product is not null)
             {
                 IList<string> AddedFiles = await _storageService.AddFile(files);
-                product.AllPictureUrl = AddedFiles;
+                foreach (var file in AddedFiles)
+                    product.AllPictureUrl.Add(new Photo()
+                    {
+                        Id = Guid.NewGuid(),
+                        photoUrl = file,
+                        ProductId = product.Id.ToString(),
+                        CurrentPhoto = false
+                    });
                 await _productWriteRepository.SaveAsync();
                 return Response<NoContent>.Success(StatusCode: StatusCodes.Status201Created);
             }

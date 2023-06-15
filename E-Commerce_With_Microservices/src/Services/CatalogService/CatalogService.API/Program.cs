@@ -15,7 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<CatalogDbContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlService"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
+
 });
 
 builder.Services.AddScoped<IProductReadRepository , ProductReadRepository>();
