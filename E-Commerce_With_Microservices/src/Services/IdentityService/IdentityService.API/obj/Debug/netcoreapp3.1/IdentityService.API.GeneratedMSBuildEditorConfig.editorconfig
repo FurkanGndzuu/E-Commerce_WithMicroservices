@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = IdentityService.API
+build_property.ProjectDir = C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\IdentityService\IdentityService.API\

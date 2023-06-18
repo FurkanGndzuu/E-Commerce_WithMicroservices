@@ -1,5 +1,6 @@
 ﻿using CatalogService.API.Abstractions;
 using CatalogService.API.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,11 +16,12 @@ namespace CatalogService.API.Controllers
         {
             _categoryService = categoryService;
         }
-
+        [Authorize(Policy = "Read")]
         [HttpGet]
         public async Task<IActionResult> GetAllCategories() => Ok(await _categoryService.GetAllCategories());
         [HttpGet("{Id}")]
         public async Task<IActionResult> GetCategoryById(string Id) => Ok(await _categoryService.GetCategoryById(Id));
+        [Authorize(Policy = "Write")]
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromQuery] string Name) => Ok(await _categoryService.AddCategory(Name));
         [HttpPut]

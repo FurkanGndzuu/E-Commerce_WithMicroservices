@@ -6,6 +6,8 @@ using CatalogService.API.Models.Contexts;
 using CatalogService.API.Services;
 using CatalogService.API.Services.Repositories.CategoryRepositories;
 using CatalogService.API.Services.Repositories.ProductRepositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -31,9 +33,23 @@ builder.Services.AddScoped<IStorageService, LocalStorageService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.Authority = builder.Configuration["IdentityServerURL"];
+    options.Audience = "resource_catalog";
+    options.RequireHttpsMetadata = false;
+});
+
+builder.Services.AddAuthorization(_ =>
+{
+    _.AddPolicy("Read", policy => policy.RequireClaim("scope", "catalog_read"));
+    _.AddPolicy("Write", policy => policy.RequireClaim("scope", "catalog_write"));
+  
+});
 
 var app = builder.Build();
 
@@ -43,10 +59,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
 
 app.MapControllers();
 

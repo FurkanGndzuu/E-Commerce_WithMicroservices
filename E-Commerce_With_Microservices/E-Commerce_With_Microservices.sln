@@ -56,7 +56,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalyticsService.API", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComplationService.API", "src\Services\ComplationService\ComplationService.API\ComplationService.API.csproj", "{1AEBF92E-C8CF-45D5-A1AA-535447405A9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServicee.API", "src\Services\IdentityService\IdentityServicee.API\IdentityServicee.API.csproj", "{3D2F0473-B41F-48D9-8054-705B676CB14D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService.API", "src\Services\IdentityService\IdentityService.API\IdentityService.API.csproj", "{08A19E12-69EE-494B-9B01-B749E7DC38AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,10 +104,10 @@ Global
 		{1AEBF92E-C8CF-45D5-A1AA-535447405A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AEBF92E-C8CF-45D5-A1AA-535447405A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AEBF92E-C8CF-45D5-A1AA-535447405A9E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D2F0473-B41F-48D9-8054-705B676CB14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D2F0473-B41F-48D9-8054-705B676CB14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D2F0473-B41F-48D9-8054-705B676CB14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D2F0473-B41F-48D9-8054-705B676CB14D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08A19E12-69EE-494B-9B01-B749E7DC38AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08A19E12-69EE-494B-9B01-B749E7DC38AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08A19E12-69EE-494B-9B01-B749E7DC38AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08A19E12-69EE-494B-9B01-B749E7DC38AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,7 +136,7 @@ Global
 		{631C72B6-9295-41D9-8754-D9021ECAF975} = {DD52D95C-4B1F-409C-88FA-819DB6D41864}
 		{41ECB28E-65DC-4C1C-8BEA-C7263EBB1353} = {763A97E0-B573-463B-8614-62C2CD4902AC}
 		{1AEBF92E-C8CF-45D5-A1AA-535447405A9E} = {686CD46D-CF2B-4F19-B341-667D109399BF}
-		{3D2F0473-B41F-48D9-8054-705B676CB14D} = {5169122D-D595-4D7B-8D94-45FDA467573C}
+		{08A19E12-69EE-494B-9B01-B749E7DC38AA} = {5169122D-D595-4D7B-8D94-45FDA467573C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1BE38D21-6B0A-4DE9-A7BF-9E95916F6867}
