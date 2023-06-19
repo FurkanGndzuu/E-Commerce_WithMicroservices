@@ -7,5 +7,6 @@ namespace StockService.API.Abstractions
     {
         Task<Response<NoContent>> UpdateStock(StockDTO stock);
         Task<Response<NoContent>> AddStock(StockDTO stockDTO);
+        Task<Response<List<StockDTO>>> GetAll();
     }
 }

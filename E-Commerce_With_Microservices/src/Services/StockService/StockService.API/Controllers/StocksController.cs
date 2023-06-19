@@ -21,8 +21,11 @@ namespace StockService.API.Controllers
         [Authorize(Policy = "Write")]
         public async Task<IActionResult> AddStock([FromBody] StockDTO stock) => Ok(await _stockService.AddStock(stock));
 
-        [HttpPost]
+        [HttpPut]
         [Authorize(Policy = "Write")]
         public async Task<IActionResult> UpdateStock([FromBody] StockDTO stock) => Ok(await _stockService.UpdateStock(stock));
+        [HttpGet]
+        [Authorize(Policy = "Read")]
+        public async Task<IActionResult> GetAll() => Ok(await _stockService.GetAll());
     }
 }

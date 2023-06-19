@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using StockService.API.Abstractions;
 using StockService.API.Settings;
 using System.IdentityModel.Tokens.Jwt;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 
-
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
 
 builder.Services.AddSingleton<IDatabaseSettings>(sp =>
@@ -26,7 +27,7 @@ JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.Authority = builder.Configuration["IdentityServerURL"];
-    options.Audience = "resource_basket";
+    options.Audience = "resource_stock";
     options.RequireHttpsMetadata = false;
 });
 
