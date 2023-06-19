@@ -1,6 +1,43 @@
+using BasketService.API.Abstractions;
+using BasketService.API.Consts;
+using BasketService.API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using System.IdentityModel.Tokens.Jwt;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.Authority = builder.Configuration["IdentityServerURL"];
+    options.Audience = "resource_basket";
+    options.RequireHttpsMetadata = false;
+});
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IBasketService, BasketService.API.Services.BasketService>();
+builder.Services.Configure<RedisSettingsConsts>(builder.Configuration.GetSection("RedisSettings"));
+
+builder.Services.AddSingleton<RedisService>(sp =>
+{
+    var redisSettings = sp.GetRequiredService<IOptions<RedisSettingsConsts>>().Value;
+
+    var redis = new RedisService(redisSettings.Host, redisSettings.Port);
+
+    redis.Connect();
+
+    return redis;
+});
+
+builder.Services.AddAuthorization(_ =>
+{
+    _.AddPolicy("Read", policy => policy.RequireClaim("scope", "basket_read"));
+    _.AddPolicy("Write", policy => policy.RequireClaim("scope", "basket_write"));
+
+});
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -17,7 +54,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
