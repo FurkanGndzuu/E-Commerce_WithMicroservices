@@ -16,6 +16,7 @@ namespace IdentityService.API
         {
             new ApiResource("resource_catalog"){Scopes={"catalog_read" , "catalog_write"}},
             new ApiResource("resource_basket"){Scopes = {"basket_read" , "basket_write"}},
+            new ApiResource("resource_stock"){Scopes = {"stock_read" , "stock_write"}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -38,6 +39,8 @@ namespace IdentityService.API
                 new ApiScope("catalog_write","Allowing to write for catalog api"),
                   new ApiScope("basket_read","Allowing to read for basket api"),
                 new ApiScope("basket_write","Allowing to write for basket api"),
+                  new ApiScope("stock_read","Allowing to read for stock api"),
+                new ApiScope("stock_write","Allowing to write for stock api"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -74,8 +77,8 @@ namespace IdentityService.API
                     ClientSecrets= {new Secret("secret".Sha256())},
                     AllowedGrantTypes= GrantTypes.ResourceOwnerPassword,
                     AllowedScopes={IdentityServerConstants.StandardScopes.Email, IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile, IdentityServerConstants.StandardScopes.OfflineAccess, IdentityServerConstants.LocalApi.ScopeName,"Roles" ,
-                        "catalog_write"
-                        
+                        "catalog_write" , "stock_read" , "stock_write"
+
                         },
                     AccessTokenLifetime=1*60*60,
                     RefreshTokenExpiration=TokenExpiration.Absolute,
