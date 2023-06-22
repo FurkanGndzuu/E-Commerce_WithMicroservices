@@ -1,0 +1,7 @@
+Services ports =>
+		CatalogService => 5002 : 5003
+		IdentityService => 5001
+		BasketService => 5004 : 5005
+		StockService => 5006 : 5007
+		PaymentService => 5008 : 5009
+		OrderService => 5011 : 5012

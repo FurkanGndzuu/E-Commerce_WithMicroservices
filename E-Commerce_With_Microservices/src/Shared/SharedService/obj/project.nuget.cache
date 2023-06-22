@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "G5xsCHw7iFJGuGI12P0V2gYBQJpkVsPCD6tUh9yWcQGyPnH87aSrRKYIRBlotXN6TFkMKzULHE8l3neYSiCHFQ==",
+  "dgSpecHash": "8nHiag62OdS8FsqIEAfrOqSGI4IIma9dCaY9doQI5B/22wk56pV3yzVIpuOYwRMIMqaiEU94smpr8fw1x8Uyqw==",
   "success": true,
   "projectFilePath": "C:\\Users\\furka\\OneDrive\\Masaüstü\\e-commerce_with_microservices\\E-Commerce_With_Microservices\\src\\Shared\\SharedService\\SharedService.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\furka\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.0.0\\microsoft.aspnetcore.http.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.0.0\\microsoft.aspnetcore.http.features.2.0.0.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\microsoft.extensions.primitives\\2.0.0\\microsoft.extensions.primitives.2.0.0.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\system.text.encodings.web\\4.4.0\\system.text.encodings.web.4.4.0.nupkg.sha512"
+  ],
   "logs": []
 }

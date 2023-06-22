@@ -1956,6 +1956,9 @@
         }
       },
       "SharedService/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.0"
+        },
         "runtime": {
           "SharedService.dll": {}
         },
