@@ -16,6 +16,9 @@ namespace OrderService.Domain.AggregateModels
 
         public List<OrderItem> _orderItems;
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
+        public OrderStatus Status { get; set; }
+
+
 
         public Order()
         {
@@ -43,4 +46,11 @@ namespace OrderService.Domain.AggregateModels
 
         public decimal GetTotalPrice => _orderItems.Sum(x => x.ProductPrice);
     }
+}
+
+public enum OrderStatus
+{
+    Suspend,
+    Failed,
+    Completed
 }
