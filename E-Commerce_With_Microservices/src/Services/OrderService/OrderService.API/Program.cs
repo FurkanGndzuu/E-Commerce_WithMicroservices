@@ -1,3 +1,4 @@
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using OrderService.Application.Repositories.Order;
@@ -50,6 +51,23 @@ builder.Services.AddAuthorization(_ =>
     _.AddPolicy("Write", policy => policy.RequireClaim("scope", "catalog_write"));
 
 });
+
+
+builder.Services.AddMassTransit(x =>
+{
+   
+    x.UsingRabbitMq((context, configuration) =>
+    {
+        configuration.Host(builder.Configuration["RabbitMQ:Host"], "/", x => {
+
+            x.Username(builder.Configuration["RabbitMQ:username"]);
+            x.Password(builder.Configuration["RabbitMQ:password"]);
+        });
+
+    });
+});
+
+builder.Services.AddOptions<MassTransitHostOptions>();
 
 var app = builder.Build();
 

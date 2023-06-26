@@ -1,0 +1,17 @@
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\bin\Debug\net6.0\OrderService.Application.deps.json
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\bin\Debug\net6.0\OrderService.Application.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\bin\Debug\net6.0\OrderService.Application.pdb
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\bin\Debug\net6.0\OrderService.Domain.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\bin\Debug\net6.0\SharedService.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\bin\Debug\net6.0\SharedService.pdb
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\bin\Debug\net6.0\OrderService.Domain.pdb
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\obj\Debug\net6.0\OrderService.Application.csproj.AssemblyReference.cache
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\obj\Debug\net6.0\OrderService.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\obj\Debug\net6.0\OrderService.Application.AssemblyInfoInputs.cache
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\obj\Debug\net6.0\OrderService.Application.AssemblyInfo.cs
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\obj\Debug\net6.0\OrderService.Application.csproj.CoreCompileInputs.cache
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\obj\Debug\net6.0\OrderService.Application.csproj.CopyComplete
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\obj\Debug\net6.0\OrderService.Application.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\obj\Debug\net6.0\refint\OrderService.Application.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\obj\Debug\net6.0\OrderService.Application.pdb
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\OrderService\OrderService.Application\obj\Debug\net6.0\ref\OrderService.Application.dll

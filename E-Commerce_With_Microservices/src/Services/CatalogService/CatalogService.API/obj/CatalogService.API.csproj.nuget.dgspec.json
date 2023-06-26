@@ -141,6 +141,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
               "version": "[2.0.0, )"

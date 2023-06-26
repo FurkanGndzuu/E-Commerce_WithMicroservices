@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Q0E18Ej7W4oMYgBAHS8rnsKaY9v3YJENvk9SNTu65dz2SjebrIKmyUEiOdfF/0ZsbFj8uVH1z1ARwOJ8tYMphA==",
+  "dgSpecHash": "MNXaob+u27DFlidsNLyrcGHBHg+8yFjw1qv23EJA/OMIOPRFC4fMuTKeABoFDO70Lt+0BQsPvM1dT/uWWIod5w==",
   "success": true,
   "projectFilePath": "C:\\Users\\furka\\OneDrive\\Masaüstü\\e-commerce_with_microservices\\E-Commerce_With_Microservices\\src\\Services\\OrderService\\OrderService.Application\\OrderService.Application.csproj",
   "expectedPackageFiles": [

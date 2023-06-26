@@ -1,14 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "+XLDTK2MK25e7w6FFAePaauHRQZsKw6gWGgTJa8oIvawnlotfwCPJoZCckKj9WBNUmmyCdYKwWjhGhTGTddIwg==",
+  "dgSpecHash": "o8fu8dhqkRd5r5YHmsDBtYK2MU8QhS6DOuWG5D7LXl+xlY0PBjO3UuYv3Z9Qox4Qn6apkEn2iUshTYinNhRqzA==",
   "success": true,
   "projectFilePath": "C:\\Users\\furka\\OneDrive\\Masaüstü\\e-commerce_with_microservices\\E-Commerce_With_Microservices\\src\\WorkerService\\SagaOrchestration-WorkerService\\SagaOrchestration-WorkerService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\furka\\.nuget\\packages\\masstransit\\8.0.16\\masstransit.8.0.16.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\masstransit.abstractions\\8.0.16\\masstransit.abstractions.8.0.16.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\masstransit.aspnetcore\\7.3.1\\masstransit.aspnetcore.7.3.1.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\masstransit.entityframeworkcore\\8.0.16\\masstransit.entityframeworkcore.8.0.16.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\masstransit.extensions.dependencyinjection\\7.3.1\\masstransit.extensions.dependencyinjection.7.3.1.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\masstransit.rabbitmq\\8.0.16\\masstransit.rabbitmq.8.0.16.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.0.0\\microsoft.aspnetcore.http.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.0.0\\microsoft.aspnetcore.http.features.2.0.0.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

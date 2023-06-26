@@ -1177,6 +1177,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "MassTransit": "8.0.16",
           "Microsoft.AspNetCore.Http.Abstractions": "2.0.0"
         },
         "compile": {

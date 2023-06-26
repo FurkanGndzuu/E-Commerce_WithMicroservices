@@ -52,3 +52,9 @@ C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With
 C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\PaymentService\PaymentService.API\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
 C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\PaymentService\PaymentService.API\bin\Debug\net6.0\SharedService.dll
 C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\PaymentService\PaymentService.API\bin\Debug\net6.0\SharedService.pdb
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\PaymentService\PaymentService.API\bin\Debug\net6.0\MassTransit.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\PaymentService\PaymentService.API\bin\Debug\net6.0\MassTransit.Abstractions.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\PaymentService\PaymentService.API\bin\Debug\net6.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\PaymentService\PaymentService.API\bin\Debug\net6.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\PaymentService\PaymentService.API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\PaymentService\PaymentService.API\bin\Debug\net6.0\System.Text.Json.dll

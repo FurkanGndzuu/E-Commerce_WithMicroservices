@@ -60,6 +60,23 @@
           }
         }
       },
+      "MassTransit.EntityFrameworkCore/8.0.16": {
+        "type": "package",
+        "dependencies": {
+          "MassTransit": "8.0.16",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MassTransit.EntityFrameworkCoreIntegration.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MassTransit.EntityFrameworkCoreIntegration.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "MassTransit.Extensions.DependencyInjection/7.3.1": {
         "type": "package",
         "dependencies": {
@@ -90,6 +107,39 @@
         },
         "runtime": {
           "lib/net6.0/MassTransit.RabbitMqTransport.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Abstractions/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.0.0",
+          "System.Text.Encodings.Web": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
             "related": ".xml"
           }
         }
@@ -1440,6 +1490,20 @@
             "rid": "win"
           }
         }
+      },
+      "SharedService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "MassTransit": "8.0.16",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SharedService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SharedService.dll": {}
+        }
       }
     }
   },
@@ -1500,6 +1564,23 @@
         "mt-logo-small.png"
       ]
     },
+    "MassTransit.EntityFrameworkCore/8.0.16": {
+      "sha512": "8DfhMFyEYidDLQ6K0oztuc1OC6fn+Wb7wN6IvGzK3pNJhdXhVk+9AAVk84/PHehML8z3IxmYa8gRyneH41+i2Q==",
+      "type": "package",
+      "path": "masstransit.entityframeworkcore/8.0.16",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGet.README.md",
+        "lib/net6.0/MassTransit.EntityFrameworkCoreIntegration.dll",
+        "lib/net6.0/MassTransit.EntityFrameworkCoreIntegration.xml",
+        "lib/netstandard2.0/MassTransit.EntityFrameworkCoreIntegration.dll",
+        "lib/netstandard2.0/MassTransit.EntityFrameworkCoreIntegration.xml",
+        "masstransit.entityframeworkcore.8.0.16.nupkg.sha512",
+        "masstransit.entityframeworkcore.nuspec",
+        "mt-logo-small.png"
+      ]
+    },
     "MassTransit.Extensions.DependencyInjection/7.3.1": {
       "sha512": "s1gnkYUngHNP9m2+Jx1vuUAvoVm4KB3oVbtFJUlXNtBBzhRFq1N3Y0w5iiew60ZBLm0j0RQcSRbI0ahMOkL+og==",
       "type": "package",
@@ -1533,6 +1614,32 @@
         "masstransit.rabbitmq.8.0.16.nupkg.sha512",
         "masstransit.rabbitmq.nuspec",
         "mt-logo-small.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Abstractions/2.0.0": {
+      "sha512": "pblZLY7IfNqhQ5wwGQ0vNq2mG6W5YgZI1fk7suEuwZsGxGEADNBAyNlTALM9L8nMXdvbp6aHP/t4wHrFpcL3Sw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.abstractions/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.xml",
+        "microsoft.aspnetcore.http.abstractions.2.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.http.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/2.0.0": {
+      "sha512": "yk62muzFTZTKCQuo3nmVPkPvGBlM2qbdSxbX62TufuONuKQrTGQ/SwhwBbYutk5/YY7u4HETu0n9BKOn7mMgmA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.2.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
     "Microsoft.CSharp/4.5.0": {
@@ -3496,17 +3603,24 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "SharedService/1.0.0": {
+      "type": "project",
+      "path": "../../Shared/SharedService/SharedService.csproj",
+      "msbuildProject": "../../Shared/SharedService/SharedService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "MassTransit.AspNetCore >= 7.3.1",
+      "MassTransit.EntityFrameworkCore >= 8.0.16",
       "MassTransit.Extensions.DependencyInjection >= 7.3.1",
       "MassTransit.RabbitMQ >= 8.0.16",
       "Microsoft.EntityFrameworkCore >= 6.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.10",
       "Microsoft.EntityFrameworkCore.Sqlite.Core >= 6.0.10",
-      "Microsoft.Extensions.Hosting >= 6.0.1"
+      "Microsoft.Extensions.Hosting >= 6.0.1",
+      "SharedService >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3541,7 +3655,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\furka\\OneDrive\\Masaüstü\\e-commerce_with_microservices\\E-Commerce_With_Microservices\\src\\Shared\\SharedService\\SharedService.csproj": {
+              "projectPath": "C:\\Users\\furka\\OneDrive\\Masaüstü\\e-commerce_with_microservices\\E-Commerce_With_Microservices\\src\\Shared\\SharedService\\SharedService.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3557,6 +3675,10 @@
           "MassTransit.AspNetCore": {
             "target": "Package",
             "version": "[7.3.1, )"
+          },
+          "MassTransit.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[8.0.16, )"
           },
           "MassTransit.Extensions.DependencyInjection": {
             "target": "Package",

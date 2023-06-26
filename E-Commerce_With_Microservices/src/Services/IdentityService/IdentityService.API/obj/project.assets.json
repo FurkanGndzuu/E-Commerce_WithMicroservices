@@ -2431,19 +2431,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "SharedService/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Microsoft.AspNetCore.Http.Abstractions": "2.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SharedService.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SharedService.dll": {}
-        }
       }
     }
   },
@@ -7271,11 +7258,6 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
-    },
-    "SharedService/1.0.0": {
-      "type": "project",
-      "path": "../../../Shared/SharedService/SharedService.csproj",
-      "msbuildProject": "../../../Shared/SharedService/SharedService.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7288,8 +7270,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.5",
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.5",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.5",
-      "Serilog.AspNetCore >= 3.2.0",
-      "SharedService >= 1.0.0"
+      "Serilog.AspNetCore >= 3.2.0"
     ]
   },
   "packageFolders": {
@@ -7325,11 +7306,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {
-            "C:\\Users\\furka\\OneDrive\\Masaüstü\\e-commerce_with_microservices\\E-Commerce_With_Microservices\\src\\Shared\\SharedService\\SharedService.csproj": {
-              "projectPath": "C:\\Users\\furka\\OneDrive\\Masaüstü\\e-commerce_with_microservices\\E-Commerce_With_Microservices\\src\\Shared\\SharedService\\SharedService.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

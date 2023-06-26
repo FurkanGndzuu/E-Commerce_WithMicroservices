@@ -140,5 +140,3 @@ C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With
 C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\IdentityService\IdentityService.API\obj\Debug\netcoreapp3.1\IdentityService.API.dll
 C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\IdentityService\IdentityService.API\obj\Debug\netcoreapp3.1\IdentityService.API.pdb
 C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\IdentityService\IdentityService.API\obj\Debug\netcoreapp3.1\IdentityService.API.genruntimeconfig.cache
-C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\IdentityService\IdentityService.API\bin\Debug\netcoreapp3.1\SharedService.dll
-C:\Users\furka\OneDrive\Masaüstü\e-commerce_with_microservices\E-Commerce_With_Microservices\src\Services\IdentityService\IdentityService.API\bin\Debug\netcoreapp3.1\SharedService.pdb
