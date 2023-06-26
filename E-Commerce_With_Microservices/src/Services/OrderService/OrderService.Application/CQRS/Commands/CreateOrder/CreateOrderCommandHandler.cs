@@ -42,7 +42,8 @@ namespace OrderService.Application.CQRS.Commands.CreateOrder
             {
                 BuyerId = _sharedIdentityService.GetUserIdAsync(),
                 OrderId = order.Id,
-                WalletId = request.walletId
+                WalletId = request.walletId,
+                TotalPrice = order.GetTotalPrice
             };
 
             request.OrderItems.ForEach(item =>

@@ -4,9 +4,13 @@ using BasketService.API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using SharedService.Identity;
 using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+builder.Services.AddHttpContextAccessor();
 
 // Add services to the container.
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");

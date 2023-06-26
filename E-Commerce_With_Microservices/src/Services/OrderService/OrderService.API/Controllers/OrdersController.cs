@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OrderService.Application.CQRS.Commands.CreateOrder;
 using OrderService.Application.CQRS.Queries;
 using OrderService.Application.CQRS.Queries.GetOrderById;
 using OrderService.Application.CQRS.Queries.GetOrdersByUserId;
@@ -28,5 +29,8 @@ namespace OrderService.API.Controllers
         [HttpGet]
         [Authorize(Policy = "Read")]
         public async Task<IActionResult> GetOrderByUserId(GetOrdersByUserIdQueryRequest request) => Ok(await _mediatr.Send(request));
+        [HttpPost]
+        [Authorize(Policy = "Write")]
+        public async Task<IActionResult> CreateOrder(CreateOrderCommandRequest request) => Ok(await _mediatr.Send(request));
     }
 }

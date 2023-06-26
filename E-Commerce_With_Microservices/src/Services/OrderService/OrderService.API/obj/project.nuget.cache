@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/DODQJtfG6Gt2+T0smCeAqCDvvSQEmZ7/VDRnq3uGbg3FK4xfcoDHeEV4i+Hyp+Y4TAD52WdSPZtXlzqHhN4gA==",
+  "dgSpecHash": "eikg4LLp7Tw1Y3sJ22gxjl05iEpUQ3QCa9XRqr3rushTBDjnf0JSDtekHgzUUF/E5m1QZJ0anlQZVzACXlXTlA==",
   "success": true,
   "projectFilePath": "C:\\Users\\furka\\OneDrive\\Masaüstü\\e-commerce_with_microservices\\E-Commerce_With_Microservices\\src\\Services\\OrderService\\OrderService.API\\OrderService.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\furka\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\masstransit\\8.0.16\\masstransit.8.0.16.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\masstransit.abstractions\\8.0.16\\masstransit.abstractions.8.0.16.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\masstransit.aspnetcore\\7.3.1\\masstransit.aspnetcore.7.3.1.nupkg.sha512",
@@ -22,6 +23,7 @@
     "C:\\Users\\furka\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.10\\microsoft.entityframeworkcore.abstractions.6.0.10.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.10\\microsoft.entityframeworkcore.analyzers.6.0.10.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.10\\microsoft.entityframeworkcore.design.6.0.10.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.10\\microsoft.entityframeworkcore.relational.6.0.10.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.10\\microsoft.entityframeworkcore.sqlserver.6.0.10.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

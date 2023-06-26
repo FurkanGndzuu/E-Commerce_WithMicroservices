@@ -12,6 +12,7 @@ namespace SharedService.Events
         public string BuyerId { get; set; }
         public List<OrderItemMessage> OrderItems { get; set; } = new List<OrderItemMessage>();
         public string WalletId { get; set; }
+        public decimal TotalPrice { get; set; }
 
 
     }

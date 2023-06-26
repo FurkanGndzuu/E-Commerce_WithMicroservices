@@ -1,4 +1,5 @@
-﻿using OrderService.Domain.SeedWork;
+﻿using Microsoft.EntityFrameworkCore;
+using OrderService.Domain.SeedWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace OrderService.Domain.AggregateModels
 {
+    [Owned]
     public class Address : ValueObject
     {
         public string Country { get; set; }

@@ -1,11 +1,14 @@
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using OrderService.Application.Consumers;
 using OrderService.Application.Repositories.Order;
 using OrderService.Application.Repositories.OrderItem;
 using OrderService.Infrastructure.Context;
 using OrderService.Infrastructure.Repositories.Order;
 using OrderService.Infrastructure.Repositories.OrderItem;
+using SharedService.Identity;
+using SharedService.Settings;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
 using static System.Net.Mime.MediaTypeNames;
@@ -47,14 +50,20 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 
 builder.Services.AddAuthorization(_ =>
 {
-    _.AddPolicy("Read", policy => policy.RequireClaim("scope", "catalog_read"));
-    _.AddPolicy("Write", policy => policy.RequireClaim("scope", "catalog_write"));
+    _.AddPolicy("ReadAdmin", policy => policy.RequireClaim("scope", "order_read_admin"));
+    _.AddPolicy("Write", policy => policy.RequireClaim("scope", "order_read"));
+    _.AddPolicy("Read", policy => policy.RequireClaim("scope", "order_read"));
 
 });
+
+builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+builder.Services.AddHttpContextAccessor();
 
 
 builder.Services.AddMassTransit(x =>
 {
+    x.AddConsumer<OrderCompletedEventConsumer>();
+    x.AddConsumer<OrderRequestFailedEventConsumer>();
    
     x.UsingRabbitMq((context, configuration) =>
     {
@@ -62,6 +71,15 @@ builder.Services.AddMassTransit(x =>
 
             x.Username(builder.Configuration["RabbitMQ:username"]);
             x.Password(builder.Configuration["RabbitMQ:password"]);
+        });
+
+        configuration.ReceiveEndpoint(RabbitmqSettings.OrderSagaFailed , e =>
+        {
+            e.ConfigureConsumer<OrderRequestFailedEventConsumer>(context);
+        });
+        configuration.ReceiveEndpoint(RabbitmqSettings.OrderSagaCompleted, e =>
+        {
+            e.ConfigureConsumer<OrderCompletedEventConsumer>(context);
         });
 
     });

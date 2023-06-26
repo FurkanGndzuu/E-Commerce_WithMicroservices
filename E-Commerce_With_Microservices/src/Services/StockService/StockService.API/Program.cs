@@ -2,6 +2,7 @@ using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using SharedService.Identity;
 using SharedService.Settings;
 using StockService.API.Abstractions;
 using StockService.API.Consumers;
@@ -12,7 +13,8 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+builder.Services.AddHttpContextAccessor();
 
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());

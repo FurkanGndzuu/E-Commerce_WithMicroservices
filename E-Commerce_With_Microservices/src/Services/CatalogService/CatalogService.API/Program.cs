@@ -9,6 +9,7 @@ using CatalogService.API.Services.Repositories.ProductRepositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
+using SharedService.Identity;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -50,6 +51,9 @@ builder.Services.AddAuthorization(_ =>
     _.AddPolicy("Write", policy => policy.RequireClaim("scope", "catalog_write"));
   
 });
+
+builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
