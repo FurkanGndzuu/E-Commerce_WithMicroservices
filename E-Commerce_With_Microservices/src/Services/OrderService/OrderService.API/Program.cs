@@ -51,7 +51,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 builder.Services.AddAuthorization(_ =>
 {
     _.AddPolicy("ReadAdmin", policy => policy.RequireClaim("scope", "order_read_admin"));
-    _.AddPolicy("Write", policy => policy.RequireClaim("scope", "order_read"));
+    _.AddPolicy("Write", policy => policy.RequireClaim("scope", "order_write"));
     _.AddPolicy("Read", policy => policy.RequireClaim("scope", "order_read"));
 
 });
@@ -97,7 +97,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

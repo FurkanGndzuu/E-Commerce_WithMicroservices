@@ -38,6 +38,16 @@ namespace OrderService.Application.CQRS.Commands.CreateOrder
 
             Order order = new Order(_sharedIdentityService.GetUserIdAsync(), address);
 
+
+            request.OrderItems.ForEach(item =>
+            {
+                order.AddOrderItem(item.ProductId , item.ProductName , item.ProductPrice , item.PictureUrl , item.ProductQuantity);
+               
+            });
+
+            await _orderWriteRepository.AddAsync(order);
+            await _orderWriteRepository.SaveAsync();
+
             var orderCreatedRequestEvent = new OrderCreatedRequestEvent()
             {
                 BuyerId = _sharedIdentityService.GetUserIdAsync(),
@@ -48,7 +58,6 @@ namespace OrderService.Application.CQRS.Commands.CreateOrder
 
             request.OrderItems.ForEach(item =>
             {
-                order.AddOrderItem(item.ProductId , item.ProductName , item.ProductPrice , item.PictureUrl , item.ProductQuantity);
                 orderCreatedRequestEvent.OrderItems.Add(new SharedService.Messages.OrderItemMessage()
                 {
                     ProductId = item.ProductId,
@@ -56,8 +65,7 @@ namespace OrderService.Application.CQRS.Commands.CreateOrder
                 });
             });
 
-            await _orderWriteRepository.AddAsync(order);
-            await _orderWriteRepository.SaveAsync();
+
 
             var sendEndpoint = await _sendEndpointProvider.GetSendEndpoint(new Uri($"queue:{RabbitmqSettings.OrderSaga}"));
 

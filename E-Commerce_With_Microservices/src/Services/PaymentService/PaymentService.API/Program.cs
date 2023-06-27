@@ -53,7 +53,7 @@ builder.Services.AddMassTransit(x =>
             x.Password(builder.Configuration["RabbitMQ:password"]);
         });
 
-        configuration.ReceiveEndpoint(RabbitmqSettings.PaymentStockReservedEvent, e =>
+        configuration.ReceiveEndpoint(RabbitmqSettings.StockReservedSaga, e =>
         {
             e.ConfigureConsumer<StockReservedRequestPaymentEventConsumer>(context);
         });

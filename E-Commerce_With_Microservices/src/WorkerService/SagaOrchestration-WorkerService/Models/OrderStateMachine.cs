@@ -35,6 +35,7 @@ namespace SagaOrchestration_WorkerService.Models
             Event(() => StockNotReservedEvent, x => x.CorrelateById(y => y.Message.CorrelationId));
 
             Event(() => PaymentCompletedEvent, x => x.CorrelateById(y => y.Message.CorrelationId));
+            Event(() => PaymentFailedEvent, x => x.CorrelateById(y => y.Message.CorrelationId));
 
 
             Initially(When(OrderCreatedRequestEvent).Then(context =>
@@ -56,7 +57,7 @@ namespace SagaOrchestration_WorkerService.Models
                 walletId = context.Saga.WalletId,
                 OrderItems = context.Message.OrderItems,
                 UserId = context.Saga.BuyerId
-            }),When(StockNotReservedEvent).Publish(context => new OrderRequestFailedEvent()
+            }),When(StockNotReservedEvent).TransitionTo(StockNotReserved).Publish(context => new OrderRequestFailedEvent()
             {
                 OrderId = context.Saga.OrderId,
                 FailedMessage = "There Are Not Enough Stock"
@@ -66,7 +67,7 @@ namespace SagaOrchestration_WorkerService.Models
             During(StockReserved, When(PaymentCompletedEvent).TransitionTo(PaymentCompleted).Publish(context => new OrderCompletedRequestEvent()
             {
                 OrderId = context.Saga.OrderId,  
-            }),When(PaymentFailedEvent).Publish(context => new OrderRequestFailedEvent()
+            }),When(PaymentFailedEvent).TransitionTo(PaymentCompleted).Publish(context => new OrderRequestFailedEvent()
             {
                 OrderId = context.Saga.OrderId,
                 FailedMessage = "There are not enough money in your wallet"

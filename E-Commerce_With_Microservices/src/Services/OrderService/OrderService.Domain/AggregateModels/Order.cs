@@ -30,6 +30,7 @@ namespace OrderService.Domain.AggregateModels
             CreatedDate = DateTime.Now;
             UserId = buyerId;
             Adress = address;
+            totalPrice = GetTotalPrice;
         }
 
         public void AddOrderItem(string productId, string productName, decimal price, string pictureUrl , int quantity)

@@ -20,13 +20,13 @@ namespace OrderService.API.Controllers
             _mediatr = mediatr;
         }
 
-        [HttpGet]
+        [HttpGet("all-orders")]
         [Authorize(Policy = "ReadAdmin")]
         public async Task<IActionResult> GetOrders(GetOrderQueryRequest request) => Ok(await _mediatr.Send(request));
         [HttpGet]
         [Authorize(Policy = "ReadAdmin")]
         public async Task<IActionResult> GetOrderById(GetOrderByIdQueryRequest request) => Ok(await _mediatr.Send(request));
-        [HttpGet]
+        [HttpGet("user-orders")]
         [Authorize(Policy = "Read")]
         public async Task<IActionResult> GetOrderByUserId(GetOrdersByUserIdQueryRequest request) => Ok(await _mediatr.Send(request));
         [HttpPost]
