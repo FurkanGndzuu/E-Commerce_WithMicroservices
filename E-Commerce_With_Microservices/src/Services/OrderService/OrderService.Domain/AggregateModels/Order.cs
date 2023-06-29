@@ -45,7 +45,7 @@ namespace OrderService.Domain.AggregateModels
             }
         }
 
-        public decimal GetTotalPrice => _orderItems.Sum(x => x.ProductPrice);
+        public decimal GetTotalPrice => _orderItems.Sum(x => x.ProductPrice * x.ProductQuantity);
     }
 }
 

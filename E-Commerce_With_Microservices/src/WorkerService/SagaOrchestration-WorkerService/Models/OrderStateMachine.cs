@@ -35,6 +35,7 @@ namespace SagaOrchestration_WorkerService.Models
             Event(() => StockNotReservedEvent, x => x.CorrelateById(y => y.Message.CorrelationId));
 
             Event(() => PaymentCompletedEvent, x => x.CorrelateById(y => y.Message.CorrelationId));
+
             Event(() => PaymentFailedEvent, x => x.CorrelateById(y => y.Message.CorrelationId));
 
 
@@ -51,7 +52,7 @@ namespace SagaOrchestration_WorkerService.Models
             ).TransitionTo(OrderCreated).Send(new Uri($"queue:{RabbitmqSettings.OrderCreatedSaga}"),context => new OrderCreatedEvent(context.Instance.CorrelationId) { OrderItems = context.Message.OrderItems}));
 
 
-            During(OrderCreated, When(StockReservedEvent).Send(new Uri($"queue:{RabbitmqSettings.StockReservedSaga}"), context =>new StockReservedRequestPaymentEvent(context.Instance.CorrelationId)
+            During(OrderCreated, When(StockReservedEvent).TransitionTo(StockReserved).Send(new Uri($"queue:{RabbitmqSettings.StockReservedSaga}"), context =>new StockReservedRequestPaymentEvent(context.Instance.CorrelationId)
             {
                 TotalPrice = context.Saga.TotalPrice,
                 walletId = context.Saga.WalletId,
@@ -67,7 +68,7 @@ namespace SagaOrchestration_WorkerService.Models
             During(StockReserved, When(PaymentCompletedEvent).TransitionTo(PaymentCompleted).Publish(context => new OrderCompletedRequestEvent()
             {
                 OrderId = context.Saga.OrderId,  
-            }),When(PaymentFailedEvent).TransitionTo(PaymentCompleted).Publish(context => new OrderRequestFailedEvent()
+            }),When(PaymentFailedEvent).TransitionTo(PaymentFailed).Publish(context => new OrderRequestFailedEvent()
             {
                 OrderId = context.Saga.OrderId,
                 FailedMessage = "There are not enough money in your wallet"
