@@ -62,11 +62,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderService", "OrderServic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.API", "src\Services\OrderService\OrderService.API\OrderService.API.csproj", "{3D3B8B13-4D65-4193-AF74-A93A34221BFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Domain", "src\Services\OrderService\OrderService.Domain\OrderService.Domain.csproj", "{57DC7D66-5467-4F77-BE1F-AB1E39E16A15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Domain", "src\Services\OrderService\OrderService.Domain\OrderService.Domain.csproj", "{57DC7D66-5467-4F77-BE1F-AB1E39E16A15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Application", "src\Services\OrderService\OrderService.Application\OrderService.Application.csproj", "{9CC5199C-DD32-4BDF-828D-A74E75F2E34F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Application", "src\Services\OrderService\OrderService.Application\OrderService.Application.csproj", "{9CC5199C-DD32-4BDF-828D-A74E75F2E34F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Infrastructure", "src\Services\OrderService\OrderService.Infrastructure\OrderService.Infrastructure.csproj", "{C6FBAC56-714D-4F74-A254-92072798271B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Infrastructure", "src\Services\OrderService\OrderService.Infrastructure\OrderService.Infrastructure.csproj", "{C6FBAC56-714D-4F74-A254-92072798271B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
