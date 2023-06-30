@@ -2,7 +2,7 @@
 {
     public interface IMailService
     {
-        Task SendMail(string UserId, string Title, string Content, bool Html = true);
-        Task SendMail(IList<string> UserId, string Title, string Content, bool Html = true);
+        Task MailSender(string userId , string title, string body , bool isBodyHtmlTrue = true);
+        Task MailSender(IList<string> userId, string title, string body, bool isBodyHtmlTrue = true);
     }
 }

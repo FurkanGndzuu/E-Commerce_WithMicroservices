@@ -2,6 +2,7 @@
 using IdentityService.API.DTOs;
 using IdentityService.API.Models;
 using Microsoft.AspNetCore.Identity;
+using System;
 using System.Threading.Tasks;
 
 namespace IdentityService.API.Services
@@ -34,6 +35,14 @@ namespace IdentityService.API.Services
             }
             return true;
            
+        }
+
+        public async Task<string> FindEmail(string userId)
+        {
+         ApplicationUser User = await _userManager.FindByIdAsync(userId);
+            if(User != null)
+                return User.Email;
+            throw new Exception();
         }
     }
 }
