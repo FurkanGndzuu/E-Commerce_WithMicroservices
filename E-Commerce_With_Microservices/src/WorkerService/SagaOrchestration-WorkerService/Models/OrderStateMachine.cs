@@ -61,17 +61,20 @@ namespace SagaOrchestration_WorkerService.Models
             }),When(StockNotReservedEvent).TransitionTo(StockNotReserved).Publish(context => new OrderRequestFailedEvent()
             {
                 OrderId = context.Saga.OrderId,
-                FailedMessage = "There Are Not Enough Stock"
+                FailedMessage = "There Are Not Enough Stock",
+                UserId = context.Saga.BuyerId
             }));
 
 
             During(StockReserved, When(PaymentCompletedEvent).TransitionTo(PaymentCompleted).Publish(context => new OrderCompletedRequestEvent()
             {
-                OrderId = context.Saga.OrderId,  
+                OrderId = context.Saga.OrderId,
+                UserId = context.Saga.BuyerId
             }),When(PaymentFailedEvent).TransitionTo(PaymentFailed).Publish(context => new OrderRequestFailedEvent()
             {
                 OrderId = context.Saga.OrderId,
-                FailedMessage = "There are not enough money in your wallet"
+                FailedMessage = "There are not enough money in your wallet",
+                UserId = context.Saga.BuyerId
             }));
 
             SetCompletedWhenFinalized();

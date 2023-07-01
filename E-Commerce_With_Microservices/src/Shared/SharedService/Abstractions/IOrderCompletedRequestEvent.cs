@@ -8,5 +8,6 @@ namespace SharedService.Abstractions
     public interface IOrderCompletedRequestEvent
     {
         public int OrderId { get; set; }
+        public string UserId { get; set; }
     }
 }

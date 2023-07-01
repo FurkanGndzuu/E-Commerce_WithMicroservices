@@ -8,5 +8,6 @@ namespace SharedService.Events
     public class OrderCompletedRequestEvent : IOrderCompletedRequestEvent
     {
         public int OrderId { get; set; }
+        public string UserId { get; set; }
     }
 }

@@ -1,19 +1,17 @@
 ﻿using NotificationService.API.Abstractions;
-using System.Net.Mail;
 using System.Net;
-using IdentityService.API.Abstractions;
-using static IdentityServer4.Models.IdentityResources;
+using System.Net.Mail;
 
 namespace NotificationService.API.Services
 {
     public class MailService : IMailService
     {
-        readonly IUserService _userService;
+    
         readonly IConfiguration _configuration;
 
-        public MailService(IUserService userService, IConfiguration configuration)
+        public MailService( IConfiguration configuration)
         {
-            _userService = userService;
+            
             _configuration = configuration;
         }
 
@@ -26,26 +24,26 @@ namespace NotificationService.API.Services
         {
            foreach(var item in userId)
             {
-                try
+                MailMessage msg = new MailMessage();
+
+                msg.From = new MailAddress(_configuration["Mail:username"]);
+                msg.To.Add("furkangndz93@gmail.com");
+                msg.Subject = title;
+                msg.Body = body;
+                //msg.Priority = MailPriority.High;
+                msg.IsBodyHtml = isBodyHtmlTrue;
+
+
+                using (SmtpClient client = new SmtpClient())
                 {
-                    MailMessage message = new MailMessage();
-                    SmtpClient smtp = new SmtpClient();
-                    message.From = new MailAddress(_configuration["Mail:userName"]);
-                    message.To.Add(new MailAddress(await _userService.FindEmail(item)));
-                    message.Subject = title;
-                    message.IsBodyHtml = isBodyHtmlTrue;   
-                    message.Body = body;
-                    smtp.Port = 587;
-                    smtp.Host = _configuration["Mail:host"];   
-                    smtp.EnableSsl = true;
-                    smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new NetworkCredential(_configuration["Mail:userName"], _configuration["Mail:password"]);
-                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    smtp.Send(message);
-                 }
-                catch (Exception e)
-                {
-             
+                    client.EnableSsl = true;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential(_configuration["Mail:username"], _configuration["Mail:password"]);
+                    client.Host = _configuration["Mail:host"];
+                    client.Port = 587;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                    client.Send(msg);
                 }
             }
         }

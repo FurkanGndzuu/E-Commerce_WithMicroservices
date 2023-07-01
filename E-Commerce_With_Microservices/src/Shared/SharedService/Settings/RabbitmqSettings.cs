@@ -13,5 +13,6 @@ namespace SharedService.Settings
         public static string OrderSagaFailed = "Order-Saga-Failed-Queue";
         public static string OrderSagaCompleted = "Order-Saga-Completed-Queue";
         public static string PaymentFailedSagaQueue = "Payment-Failed-Saga-Queue";
+        public static string OrderCompletedNotificationQueue = "Order-Completed-Notification-Saga-Queue";
     }
 }
