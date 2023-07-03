@@ -4,4 +4,5 @@ Services ports =>
 		BasketService => 5004 : 5005
 		StockService => 5006 : 5007
 		PaymentService => 5008 : 5009
-		OrderService => 5011 : 5012
+		OrderService => 5013 : 5014
+		Notification => 5018 : 5019
