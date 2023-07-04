@@ -1,5 +1,6 @@
 ﻿using BasketService.API.Abstractions;
 using BasketService.API.DTOs;
+using Serilog;
 using SharedService.Responses;
 using System.Text.Json;
 
@@ -57,7 +58,7 @@ namespace BasketService.API.Services
 
         public async Task<Response<BasketDTO>> GetBasket(string userId)
         {
-          var basket =  await _redisService.GetDb().StringGetAsync(userId);
+            var basket =  await _redisService.GetDb().StringGetAsync(userId);
             if (String.IsNullOrEmpty(basket))
             {
                 BasketDTO dto = new BasketDTO()

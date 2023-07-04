@@ -4,6 +4,7 @@ using BasketService.API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using Serilog;
 using SharedService.Identity;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -47,6 +48,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.Seq(builder.Configuration["SeqUrl"])
+            .CreateLogger();
+
 
 var app = builder.Build();
 

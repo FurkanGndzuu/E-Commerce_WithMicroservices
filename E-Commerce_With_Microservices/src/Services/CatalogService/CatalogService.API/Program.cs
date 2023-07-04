@@ -9,6 +9,7 @@ using CatalogService.API.Services.Repositories.ProductRepositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using SharedService.Identity;
 using System.Reflection;
 
@@ -54,6 +55,12 @@ builder.Services.AddAuthorization(_ =>
 
 builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 builder.Services.AddHttpContextAccessor();
+
+Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.Seq(builder.Configuration["SeqUrl"])
+            .CreateLogger();
 
 var app = builder.Build();
 

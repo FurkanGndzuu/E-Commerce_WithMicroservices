@@ -64,7 +64,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationService.API", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{AC754A38-485D-4997-8232-89C6A18D6150}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "src\ApiGateways\ApiGateway\ApiGateway.csproj", "{F3E19865-46BB-4996-B49C-BD08E2947062}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "src\ApiGateways\ApiGateway\ApiGateway.csproj", "{F3E19865-46BB-4996-B49C-BD08E2947062}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
