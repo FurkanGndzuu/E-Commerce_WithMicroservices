@@ -1,4 +1,5 @@
 ﻿using NotificationService.API.Abstractions;
+using SharedService.Identity;
 using System.Net;
 using System.Net.Mail;
 
@@ -8,11 +9,13 @@ namespace NotificationService.API.Services
     {
     
         readonly IConfiguration _configuration;
+        readonly ISharedIdentityService _sharedIdentityService;
 
-        public MailService( IConfiguration configuration)
+        public MailService(IConfiguration configuration, ISharedIdentityService sharedIdentityService)
         {
-            
+
             _configuration = configuration;
+            _sharedIdentityService = sharedIdentityService;
         }
 
         public async Task MailSender(string userId, string title, string body, bool isBodyHtmlTrue = true)
@@ -27,7 +30,7 @@ namespace NotificationService.API.Services
                 MailMessage msg = new MailMessage();
 
                 msg.From = new MailAddress(_configuration["Mail:username"]);
-                msg.To.Add("furkangndz93@gmail.com");
+                msg.To.Add(_sharedIdentityService.GetUserEmail());
                 msg.Subject = title;
                 msg.Body = body;
                 //msg.Priority = MailPriority.High;

@@ -19,6 +19,7 @@ namespace IdentityService.API
             new ApiResource("resource_stock"){Scopes = {"stock_read" , "stock_write"}},
             new ApiResource("resource_payment"){Scopes = {"payment_read" , "payment_write"}},
                 new ApiResource("resource_order"){Scopes = {"order_read","order_read_admin" , "order_write"}},
+                new ApiResource("resource_complaint"){Scopes = {"complaint_read" , "complaint_write"}},
                  new ApiResource("resource_gateway"){Scopes = {"gateway_full"}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
@@ -50,6 +51,8 @@ namespace IdentityService.API
                 new ApiScope("order_write","Allowing to write for order api"),
                 new ApiScope("order_read_admin","Allowing to write for order api"),
                  new ApiScope("gateway_full","Allowing to full for gateway api"),
+                   new ApiScope("complaint_read","Allowing to read for complaint api"),
+                new ApiScope("complaint_write","Allowing to write for complaint api"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -73,7 +76,7 @@ namespace IdentityService.API
                     AllowedGrantTypes= GrantTypes.ResourceOwnerPassword,
                     AllowedScopes={IdentityServerConstants.StandardScopes.Email, IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile, IdentityServerConstants.StandardScopes.OfflineAccess, IdentityServerConstants.LocalApi.ScopeName,"Roles" ,
                        "basket_read" , "basket_write" , "stock_read" , "payment_read" , "payment_write" , "order_write","order_read",
-                       "catalog_read","gateway_full"},
+                       "catalog_read","gateway_full","complaint_read","complaint_write"},
                     AccessTokenLifetime=1*60*60,
                     RefreshTokenExpiration=TokenExpiration.Absolute,
                     AbsoluteRefreshTokenLifetime= (int) (DateTime.Now.AddDays(60)- DateTime.Now).TotalSeconds,
@@ -88,7 +91,7 @@ namespace IdentityService.API
                     AllowedGrantTypes= GrantTypes.ResourceOwnerPassword,
                     AllowedScopes={IdentityServerConstants.StandardScopes.Email, IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile, IdentityServerConstants.StandardScopes.OfflineAccess, IdentityServerConstants.LocalApi.ScopeName,"Roles" ,
                         "catalog_write" , "stock_read" , "stock_write","order_read_admin",
-                        "catalog_read","gateway_full"
+                        "catalog_read","gateway_full","complaint_read"
 
                         },
                     AccessTokenLifetime=1*60*60,
