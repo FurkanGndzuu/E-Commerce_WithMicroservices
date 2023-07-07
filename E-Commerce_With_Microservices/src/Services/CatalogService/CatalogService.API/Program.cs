@@ -7,9 +7,12 @@ using CatalogService.API.Services;
 using CatalogService.API.Services.Repositories.CategoryRepositories;
 using CatalogService.API.Services.Repositories.ProductRepositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Serilog.Core;
+using Serilog.Sinks.MSSqlServer;
 using SharedService.Identity;
 using System.Reflection;
 
@@ -59,9 +62,8 @@ builder.Services.AddHttpContextAccessor();
 Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
             .WriteTo.Console()
-            .WriteTo.Seq(builder.Configuration["SeqUrl"])
+            .WriteTo.Seq("http://localhost:5341") // Seq URL'ini buraya yazýn
             .CreateLogger();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

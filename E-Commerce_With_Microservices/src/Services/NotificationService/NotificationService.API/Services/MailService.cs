@@ -9,13 +9,13 @@ namespace NotificationService.API.Services
     {
     
         readonly IConfiguration _configuration;
-        readonly ISharedIdentityService _sharedIdentityService;
+        //readonly ISharedIdentityService _sharedIdentityService;
 
-        public MailService(IConfiguration configuration, ISharedIdentityService sharedIdentityService)
+        public MailService(IConfiguration configuration)
         {
 
             _configuration = configuration;
-            _sharedIdentityService = sharedIdentityService;
+            //_sharedIdentityService = sharedIdentityService;
         }
 
         public async Task MailSender(string userId, string title, string body, bool isBodyHtmlTrue = true)
@@ -30,7 +30,7 @@ namespace NotificationService.API.Services
                 MailMessage msg = new MailMessage();
 
                 msg.From = new MailAddress(_configuration["Mail:username"]);
-                msg.To.Add(_sharedIdentityService.GetUserEmail());
+                msg.To.Add(/*_sharedIdentityService.GetUserEmail()*/"furkangndz93@gmail.com");
                 msg.Subject = title;
                 msg.Body = body;
                 //msg.Priority = MailPriority.High;

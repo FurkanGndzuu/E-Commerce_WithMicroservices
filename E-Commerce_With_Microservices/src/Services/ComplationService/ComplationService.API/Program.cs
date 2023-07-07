@@ -1,7 +1,11 @@
 using ComplationService.API.Abstractions;
 using ComplationService.API.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.Extensions.Options;
+using Serilog;
+using Serilog.Core;
+using Serilog.Sinks.MSSqlServer;
 using SharedService.Identity;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -36,6 +40,12 @@ builder.Services.AddSingleton<IDatabaseSettings>(sp =>
 {
     return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;
 });
+
+Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.Seq("http://localhost:5341") // Seq URL'ini buraya yazýn
+            .CreateLogger();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

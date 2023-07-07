@@ -1,7 +1,11 @@
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using Serilog;
+using Serilog.Core;
+using Serilog.Sinks.MSSqlServer;
 using SharedService.Identity;
 using SharedService.Settings;
 using StockService.API.Abstractions;
@@ -73,6 +77,12 @@ builder.Services.AddMassTransit(opt =>
 
     });
 });
+
+Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.Seq("http://localhost:5341") // Seq URL'ini buraya yazýn
+            .CreateLogger();
 
 builder.Services.AddOptions<MassTransitHostOptions>();
 

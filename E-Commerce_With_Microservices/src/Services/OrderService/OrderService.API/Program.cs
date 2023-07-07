@@ -1,12 +1,17 @@
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using OrderService.Application.Consumers;
 using OrderService.Application.Repositories.Order;
 using OrderService.Application.Repositories.OrderItem;
 using OrderService.Infrastructure.Context;
 using OrderService.Infrastructure.Repositories.Order;
 using OrderService.Infrastructure.Repositories.OrderItem;
+using Serilog;
+using Serilog.Core;
+using Serilog.Sinks.MSSqlServer;
 using SharedService.Identity;
 using SharedService.Settings;
 using System.IdentityModel.Tokens.Jwt;
@@ -85,7 +90,15 @@ builder.Services.AddMassTransit(x =>
     });
 });
 
+
+
 builder.Services.AddOptions<MassTransitHostOptions>();
+
+Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.Seq("http://localhost:5341") // Seq URL'ini buraya yazýn
+            .CreateLogger();
 
 var app = builder.Build();
 

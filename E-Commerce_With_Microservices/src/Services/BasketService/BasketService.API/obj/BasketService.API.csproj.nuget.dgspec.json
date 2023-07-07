@@ -62,6 +62,14 @@
               "target": "Package",
               "version": "[6.1.0, )"
             },
+            "Serilog.Sinks.Graylog": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Serilog.Sinks.MSSqlServer": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
             "Serilog.Sinks.Seq": {
               "target": "Package",
               "version": "[5.2.2, )"

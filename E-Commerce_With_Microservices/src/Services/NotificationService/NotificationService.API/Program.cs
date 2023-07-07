@@ -1,7 +1,11 @@
 using MassTransit;
+using Microsoft.AspNetCore.HttpLogging;
 using NotificationService.API.Abstractions;
 using NotificationService.API.Consumers;
 using NotificationService.API.Services;
+using Serilog;
+using Serilog.Core;
+using Serilog.Sinks.MSSqlServer;
 using SharedService.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +34,12 @@ builder.Services.AddMassTransit(x =>
 });
 
 builder.Services.AddOptions<MassTransitHostOptions>();
+
+Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.Seq("http://localhost:5341") // Seq URL'ini buraya yazýn
+            .CreateLogger();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

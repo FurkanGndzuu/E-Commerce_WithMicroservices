@@ -1,9 +1,13 @@
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.Extensions.Options;
 using PaymentService.API.Abstractions;
 using PaymentService.API.Consumers;
 using PaymentService.API.Settings;
+using Serilog;
+using Serilog.Core;
+using Serilog.Sinks.MSSqlServer;
 using SharedService.Identity;
 using SharedService.Settings;
 using System.IdentityModel.Tokens.Jwt;
@@ -60,6 +64,11 @@ builder.Services.AddMassTransit(x =>
 
     });
 });
+Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.Seq("http://localhost:5341") // Seq URL'ini buraya yazýn
+            .CreateLogger();
 
 builder.Services.AddOptions<MassTransitHostOptions>();
 
@@ -72,7 +81,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
 app.UseAuthentication();    
 

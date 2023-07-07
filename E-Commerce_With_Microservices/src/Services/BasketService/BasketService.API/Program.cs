@@ -2,9 +2,12 @@ using BasketService.API.Abstractions;
 using BasketService.API.Consts;
 using BasketService.API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Serilog;
+using Serilog.Core;
+using Serilog.Sinks.MSSqlServer;
 using SharedService.Identity;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -52,9 +55,8 @@ builder.Services.AddSwaggerGen();
 Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
             .WriteTo.Console()
-            .WriteTo.Seq(builder.Configuration["SeqUrl"])
+            .WriteTo.Seq("http://localhost:5341") // Seq URL'ini buraya yazýn
             .CreateLogger();
-
 
 var app = builder.Build();
 
